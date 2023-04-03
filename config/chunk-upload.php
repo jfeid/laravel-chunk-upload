@@ -30,6 +30,7 @@ return [
             'use' => [
                 'session' => true, // should the chunk name use the session id? The uploader must send cookie!,
                 'browser' => false, // instead of session we can use the ip and browser?
+                'forwarded' => false, // should we use the x-forwarded-for ip address if behind proxy? Used only when browser is true.
             ],
         ],
     ],

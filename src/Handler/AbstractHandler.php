@@ -110,7 +110,11 @@ abstract class AbstractHandler
 
         // can work without any additional setup
         if ($useBrowser) {
-            $array[] = md5($this->request->ip().$this->request->header('User-Agent', 'no-browser'));
+            $ip = $this->request->ip();
+            if ($this->config->chunkUseForwardedIpForName()) {
+                $ip = $this->request->header('X-Forwarded-For', $ip);
+            }
+            $array[] = md5($ip .$this->request->header('User-Agent', 'no-browser'));
         }
 
         // Add additional name for more unique chunk name

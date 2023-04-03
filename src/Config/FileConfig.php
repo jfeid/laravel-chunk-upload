@@ -89,6 +89,17 @@ class FileConfig extends AbstractConfig
     }
 
     /**
+     * Should the chunk name add an forwarded ip address?
+     *
+     * @return bool
+     */
+    public function chunkUseForwardedIpForName()
+    {
+        return $this->get('chunk.name.use.forwarded', false);
+    }
+
+
+    /**
      * Returns a chunks config value.
      *
      * @param string     $key     the config name is prepended to the key value

@@ -64,4 +64,11 @@ abstract class AbstractConfig
      * @return bool
      */
     abstract public function chunkUseBrowserInfoForName();
+
+    /**
+     * Should the chunk name add an forwarded ip address?
+     *
+     * @return bool
+     */
+    abstract public function chunkUseForwardedIpForName();
 }
